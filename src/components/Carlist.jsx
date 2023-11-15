@@ -6,6 +6,7 @@ import 'ag-grid-community/styles/ag-theme-material.css';
 import { Button } from "@mui/material";
 import { Snackbar } from "@mui/material";
 import AddCar from "./AddCar";
+import EditCar from "./EditCar";
 
 
 function Carlist() {
