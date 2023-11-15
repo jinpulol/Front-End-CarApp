@@ -30,7 +30,7 @@ function Carlist() {
         },
         {
             cellRenderer: params =>
-                <EditCar params={params} updateCar={updateCar} />,
+                <EditCar params={params.data} updateCar={updateCar} />,
             width: 120
         }
     ]
@@ -89,8 +89,8 @@ function Carlist() {
 
     }
 
-     // update car
-     const updateCar = (car, link) => {
+    // update car
+    const updateCar = (car, link) => {
         fetch(link, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
