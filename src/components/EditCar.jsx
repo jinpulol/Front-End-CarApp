@@ -5,7 +5,7 @@ import { useState } from "react";
 function EditCar(props) {
 
     //state
-    const [car, setCar] = useState({ brand: '', model: '', color: '', fuel: '', year: '', price: '' });
+    const [car, setCar] = useState({ brand: '', model: '' });
     const [open, setOpen] = useState(false); // is dialog open
 
     // functions
@@ -21,10 +21,6 @@ function EditCar(props) {
         setCar({
             brand: props.params.brand,
             model: props.params.model,
-            color: props.params.color,
-            fuel: props.params.fuel,
-            year: props.params.year,
-            price: props.params.price
         });
         setOpen(true);
     }
@@ -35,14 +31,14 @@ function EditCar(props) {
         setOpen(false);
     }
 
-    const handleInputChange = (event) => {
+    const handleInputChanged = (event) => {
         setCar({ ...car, [event.target.name]: event.target.value });
     }
 
     return (
 
         <>
-            <Button variant="contained" onClick={() => setOpen(true)}>New Car</Button>
+            <Button variant="contained" onClick={handleOpen}>New Car</Button>
             <Dialog
                 open={open}
                 onClose={handleClose}>
