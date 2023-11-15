@@ -20,7 +20,7 @@ function EditCar(props) {
     const handleOpen = () => {
         setCar({
             brand: props.params.brand,
-            model: props.params.model,
+            model: props.params.model
         });
         setOpen(true);
     }
@@ -64,6 +64,7 @@ function EditCar(props) {
                 </DialogActions>
             </Dialog>
         </>
-    )}
+    )
+}
 
-    export default EditCar;
+export default EditCar;
