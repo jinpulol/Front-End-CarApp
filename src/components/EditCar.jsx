@@ -38,11 +38,11 @@ function EditCar(props) {
     return (
 
         <>
-            <Button variant="contained" onClick={handleOpen}>New Car</Button>
+            <Button variant="contained" onClick={handleOpen}>Edit</Button>
             <Dialog
                 open={open}
                 onClose={handleClose}>
-                <DialogTitle>New Car</DialogTitle>
+                <DialogTitle>Edit</DialogTitle>
                 <DialogContent>
                     <TextField
                         label='Brand'
