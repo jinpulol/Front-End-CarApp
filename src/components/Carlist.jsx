@@ -90,6 +90,26 @@ function Carlist() {
 
     }
 
+     // update car
+     const updateCar = (car, link) => {
+        fetch(link, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(car)
+        })
+            .then(res => {
+                if (res.ok) {
+                    setMsg('Car was updated successfully');
+                    setOpen(true);
+                    getCars();
+                } else {
+                    alert('Something went wrong: ' + res.status);
+                }
+
+            })
+            .catch(e => console.error(e));
+    }
+
     return (
 
         <>
