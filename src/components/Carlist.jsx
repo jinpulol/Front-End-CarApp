@@ -29,11 +29,11 @@ function Carlist() {
                     Delete
                 </Button>
         },
-        // {
-        //     cellRenderer: params =>
-        //         <EditCar params={params} updateCar={updateCar} />,
-        //     width: 120
-        // }
+        {
+            cellRenderer: params =>
+                <EditCar params={params} updateCar={updateCar} />,
+            width: 120
+        }
     ]
 
 
@@ -52,6 +52,7 @@ function Carlist() {
             .catch(error => console.error(error));
     }
 
+    // delete car
     const deleteCar = (params) => {
         console.log("params: " + params.data._links.car.href);
         fetch(params.data._links.car.href, { method: 'DELETE' })
@@ -67,6 +68,7 @@ function Carlist() {
             .catch(error => console.error(error));
     }
 
+    // add new car
     const addCar = (car) => {
         //REST API call
         // alert("Lisään auton kohta REST-rajapinnan avulla tietokantaan")
